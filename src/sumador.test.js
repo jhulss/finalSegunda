@@ -11,4 +11,9 @@ describe("Verificar", () => {
     expect(verifi.verificar("[]")).toEqual("correcto");
   });
 
+  it("Deberia devolver incorrecto ya que la cadena no esta equilibrada", () => {
+    const verifi = new Verificardor ();
+    expect(verifi.verificar("[")).toEqual("incorrecto");
+  });
+  
 });
