@@ -1,9 +1,17 @@
-describe("Sumador", () => {
-  it("Shows the amount of the addition to the user", () => {
+describe("Postear", () => {
+  it("Deberia postear un post", () => {
     cy.visit("/");
-    cy.get("#primer-numero").type(4);
-    cy.get("#segundo-numero").type(5);
-    cy.get("#sumar-button").click();
-    cy.get("#resultado-div").should("contain", "9");
+    cy.get("#post").type("Holaa como estas");
+    cy.get("post-button").click();
+    cy.get("#resultado-div").should("contain", "Holaa como estas");
   });
+
+  it("Deberia mostrar un mensje de error al no tener contenido", () => {
+    cy.visit("/");
+    cy.get("#post").type("");
+    cy.get("post-button").click();
+    cy.get("#resultado-div").should("contain", "No es posible postear sin contenido");
+  });
+
+
 });
