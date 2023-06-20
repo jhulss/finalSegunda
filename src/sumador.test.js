@@ -1,7 +1,8 @@
-import sumar from "./sumador.js";
+import Verificardor from "./sumador";
 
-describe("Sumar", () => {
-  it("deberia sumar dos numeros", () => {
-    expect(sumar(3, 2)).toEqual(5);
+describe("Verificar", () => {
+  it("Deberia devolver un carater", () => {
+    const verifi = new Verificardor ();
+    expect(verifi.verificar(",")).toEqual(",");
   });
 });
